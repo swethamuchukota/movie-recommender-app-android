@@ -25,7 +25,7 @@ public class MovieService {
 
     private static final String API_KEY = "AIzaSyBL2v6v6rDfzNQcgNJLJcS0WOrhWO1MLf4";
 
-    public JSONArray findMoviesList(JSONObject jsonObject) {
+    public JSONArray findMoviesList(JSONArray jsonObject) {
 
         String urlString = makeUrl(jsonObject);
         try {
@@ -43,8 +43,9 @@ public class MovieService {
     }
 
    //https://maps.googleapis.com/maps/api/place/search/json?location=28.632808,77.218276&radius=500&types=atm&sensor=false&key=your_api_key
-    private String makeUrl(JSONObject jsonObject) {
-        StringBuilder urlString = new StringBuilder("https://maps.googleapis.com/maps/api/place/search/json?");
+    private String makeUrl(JSONArray jsonObject) {
+        //StringBuilder urlString = new StringBuilder("https://maps.googleapis.com/maps/api/place/search/json?");
+        StringBuilder urlString = new StringBuilder("http://10.15.131.183:9090/api/v1.0/movies");
 
        // urlString.append("&radius=" + (3 * 1609.34) /* 3 miles */);
        // urlString.append("&sensor=false&key=" + API_KEY);
@@ -52,7 +53,7 @@ public class MovieService {
         return urlString.toString();
     }
 
-    protected String getJSON(String url,JSONObject jsonObject) {
+    protected String getJSON(String url,JSONArray jsonObject) {
         StringBuilder content = new StringBuilder();
 
         try {
@@ -73,13 +74,13 @@ public class MovieService {
             os.write(jsonObject.toString().getBytes("UTF-8"));
             os.close();
 
-            BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(con.getInputStream()), 8);
+            /*BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(con.getInputStream()), 8);
             String line;
             while ((line = bufferedReader.readLine()) != null) {
                 content.append(line + "\n");
             }
 
-            bufferedReader.close();
+            bufferedReader.close();*/
         } catch (Exception e) {
 
             e.printStackTrace();

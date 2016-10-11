@@ -124,7 +124,7 @@ public class MainActivity extends Activity {
         int[] barValues = new int[] {hBarChanged,aBarChanged,dBarChanged,cBarChanged};
         String[] genre = new String[] {"Horror","Action","Drama","Comedy"} ;
 
-        JSONObject object = null;
+        JSONArray object = null;
         try {
             object = makJsonObject(barValues, genre, 4);
         } catch (JSONException e)
@@ -133,10 +133,10 @@ public class MainActivity extends Activity {
         }
 
         final MainActivity mainActivity = this;
-        new AsyncTask<JSONObject, Void, JSONArray>() {
+        new AsyncTask<JSONArray, Void, JSONArray>() {
 
             @Override
-            protected JSONArray doInBackground(JSONObject... params) {
+            protected JSONArray doInBackground(JSONArray... params) {
                 return new MovieService().findMoviesList(params[0]);
             }
 
@@ -149,7 +149,7 @@ public class MainActivity extends Activity {
         }.execute(object);
     }
 
-    public JSONObject makJsonObject(int barValues[], String genre[], int noObjects)
+    public JSONArray makJsonObject(int barValues[], String genre[], int noObjects)
             throws JSONException {
         JSONObject obj = null;
         JSONArray jsonArray = new JSONArray();
@@ -165,9 +165,9 @@ public class MainActivity extends Activity {
             jsonArray.put(obj);
         }
 
-        JSONObject finalobject = new JSONObject();
-        finalobject.put("recommend", jsonArray);
-        return finalobject;
+        /*JSONObject finalobject = new JSONObject();
+        finalobject.put("recommend", jsonArray);*/
+        return jsonArray;
     }
 
 }
