@@ -34,8 +34,11 @@ public class MovieDisplayActivity extends Activity {
         setContentView(R.layout.activity_movie_display);
 
         Intent intent = getIntent();
-        String jsonArray = intent.getStringExtra("jsonArray");
+        String jsonArray = intent.getStringExtra("recommendations");
 
+
+        // TODO : please use CommonUtils.convertJsonArrayToList() to get List<UserRecommendations>
+        // !!! ASHUTOSH to change it !!!
         try {
             array = new JSONArray(jsonArray);
             System.out.println(array.toString(2));
@@ -47,9 +50,9 @@ public class MovieDisplayActivity extends Activity {
         for(int i=0; i < array.length() ; i++) {
             try {
                 json_data = array.getJSONObject(i); //getJSONObject(i);
-                int id = json_data.getInt("id");
-                String name = json_data.getString("title");
-                items.add(name);
+                int rating = json_data.getInt("rating");
+                String name = json_data.getString("movieId");
+                items.add(name + " -- " + rating);
                 Log.d(name, "Output");
             }catch (JSONException e)
             {

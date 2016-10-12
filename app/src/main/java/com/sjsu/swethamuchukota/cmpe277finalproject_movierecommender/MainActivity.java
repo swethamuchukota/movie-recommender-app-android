@@ -12,10 +12,14 @@ import android.widget.SeekBar.*;
 import android.util.Log;
 import android.app.Activity;
 
+import com.fasterxml.jackson.core.JsonProcessingException;
+import com.fasterxml.jackson.databind.ObjectMapper;
+
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import java.io.IOException;
 import java.util.List;
 
 public class MainActivity extends Activity {
@@ -133,21 +137,26 @@ public class MainActivity extends Activity {
         }
 
         final MainActivity mainActivity = this;
-        new AsyncTask<JSONArray, Void, JSONArray>() {
+        new AsyncTask<JSONArray, Void, List<UserRecommendations>>() {
 
             @Override
-            protected JSONArray doInBackground(JSONArray... params) {
+            protected List<UserRecommendations> doInBackground(JSONArray... params) {
                 return new MovieService().findMoviesList(params[0]);
             }
 
             @Override
-            protected void onPostExecute(JSONArray findPlaces){
+            protected void onPostExecute(List<UserRecommendations> userRecommendationsList){
                 Intent intent = new Intent(mainActivity, MovieDisplayActivity.class);
-                intent.putExtra("jsonArray", findPlaces.toString());
+                String json = CommonUtils.convertObjectToJson(userRecommendationsList);
+                System.out.println("Passing user recommendations to display: " + json);
+                intent.putExtra("recommendations", json);
                 startActivity(intent);
             }
         }.execute(object);
     }
+
+
+
 
     public JSONArray makJsonObject(int barValues[], String genre[], int noObjects)
             throws JSONException {
