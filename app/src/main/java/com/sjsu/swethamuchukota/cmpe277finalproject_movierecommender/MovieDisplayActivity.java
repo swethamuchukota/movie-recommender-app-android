@@ -51,7 +51,9 @@ public class MovieDisplayActivity extends Activity {
             try {
                 json_data = array.getJSONObject(i); //getJSONObject(i);
                 int rating = json_data.getInt("rating");
-                String name = json_data.getString("movieId");
+                String name = json_data.getString("title");
+                String genre = json_data.getString("genre");
+
                 items.add(name + " -- " + rating);
                 Log.d(name, "Output");
             }catch (JSONException e)

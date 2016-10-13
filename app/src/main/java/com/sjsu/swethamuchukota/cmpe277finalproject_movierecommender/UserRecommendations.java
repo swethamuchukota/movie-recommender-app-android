@@ -9,25 +9,17 @@ import java.io.Serializable;
  */
 
 public class UserRecommendations implements Serializable {
-    private String id;
-    private int movieId;
+    private String title;
     private int rating;
-    private int userId;
+    private String genre;
+    private int movieId;
 
-    public String getId() {
-        return id;
+    public String getTitle() {
+        return title;
     }
 
-    public void setId(String id) {
-        this.id = id;
-    }
-
-    public int getMovieId() {
-        return movieId;
-    }
-
-    public void setMovieId(int movieId) {
-        this.movieId = movieId;
+    public void setTitle(String title) {
+        this.title = title;
     }
 
     public int getRating() {
@@ -38,21 +30,29 @@ public class UserRecommendations implements Serializable {
         this.rating = rating;
     }
 
-    public int getUserId() {
-        return userId;
+    public String getGenre() {
+        return genre;
     }
 
-    public void setUserId(int userId) {
-        this.userId = userId;
+    public void setGenre(String genre) {
+        this.genre = genre;
+    }
+
+    public int getMovieId() {
+        return movieId;
+    }
+
+    public void setMovieId(int movieId) {
+        this.movieId = movieId;
     }
 
     @Override
     public String toString() {
         return "UserRecommendations{" +
-                "id='" + id + '\'' +
-                ", movieId=" + movieId +
+                "title='" + title + '\'' +
                 ", rating=" + rating +
-                ", userId=" + userId +
+                ", genre='" + genre + '\'' +
+                ", movieId=" + movieId +
                 '}';
     }
 }
