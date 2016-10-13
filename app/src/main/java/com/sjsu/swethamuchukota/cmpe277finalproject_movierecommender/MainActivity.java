@@ -155,9 +155,6 @@ public class MainActivity extends Activity {
         }.execute(object);
     }
 
-
-
-
     public JSONArray makJsonObject(int barValues[], String genre[], int noObjects)
             throws JSONException {
         JSONObject obj = null;

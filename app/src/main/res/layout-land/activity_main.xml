@@ -18,7 +18,7 @@
         android:text="Movie Recommender "
         android:layout_centerHorizontal="true"
         android:textSize="35dp"
-        android:layout_marginLeft="10dp"
+        android:layout_marginLeft="5dp"
         android:textColor="#f2f6f9"
         android:shadowColor="#93a7a9"
         android:theme="@style/AppTheme"
@@ -26,58 +26,6 @@
         android:textStyle="bold"
         android:id="@+id/apptitle" />
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceMedium"
-        android:text="Comedy"
-        android:id="@+id/comedy"
-        android:layout_below="@+id/apptitle"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:textSize="30sp"
-        android:textColor="#f2f6f9"
-        android:layout_marginTop="53dp" />
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceMedium"
-        android:text="Horror"
-        android:id="@+id/horror"
-        android:layout_below="@+id/comedy"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:textSize="30sp"
-        android:textColor="#f2f6f9"
-        android:layout_marginTop="40dp" />
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceMedium"
-        android:text="Drama"
-        android:id="@+id/drama"
-        android:layout_below="@+id/horror"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:textSize="30sp"
-        android:textColor="#f2f6f9"
-        android:layout_marginTop="40dp" />
-
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceMedium"
-        android:text="Action"
-        android:id="@+id/action"
-        android:layout_below="@+id/drama"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:textSize="30sp"
-        android:textColor="#f2f6f9"
-        android:layout_marginTop="40dp" />
 
     <SeekBar
         android:layout_width="wrap_content"
@@ -102,7 +50,7 @@
         android:layout_alignRight="@+id/horror"
         android:layout_alignEnd="@+id/apptitle"
         android:layout_marginLeft="10dp"
-        android:layout_marginTop="65dp"
+        android:layout_marginTop="30dp"
         android:max="10"
         android:progressBackgroundTint="@color/whitetext"
         android:layout_below="@id/comedyBar"
@@ -118,27 +66,79 @@
         android:layout_alignRight="@+id/horror"
         android:layout_alignEnd="@+id/apptitle"
         android:layout_marginLeft="10dp"
-        android:layout_marginTop="65dp"
+        android:layout_marginTop="30dp"
         android:max="10"
         android:progressBackgroundTint="@color/whitetext"
         android:layout_below="@id/horrorBar"
         />
 
 
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="Comedy"
+        android:id="@+id/comedy"
+        android:textSize="30dp"
+        android:textColor="#f2f6f9"
+        android:layout_marginTop="5dp"
+        android:layout_below="@+id/apptitle" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="Horror"
+        android:id="@+id/horror"
+        android:textSize="30dp"
+        android:textColor="#f2f6f9"
+        android:layout_above="@+id/dramaBar"
+        android:layout_alignRight="@+id/drama"
+        android:layout_alignEnd="@+id/drama"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
     <SeekBar
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/actionBar"
-        android:layout_alignLeft="@+id/button"
-        android:layout_alignStart="@+id/button"
-        android:layout_alignRight="@+id/horror"
-        android:layout_alignEnd="@+id/apptitle"
-        android:layout_marginLeft="10dp"
         android:max="10"
-        android:layout_marginTop="65dp"
+        android:layout_marginTop="17dp"
         android:progressBackgroundTint="@color/whitetext"
-        android:layout_below="@id/dramaBar"
-        />
+        android:layout_below="@+id/dramaBar"
+        android:layout_alignLeft="@+id/dramaBar"
+        android:layout_alignStart="@+id/dramaBar"
+        android:layout_alignRight="@+id/dramaBar"
+        android:layout_alignEnd="@+id/dramaBar" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="Action"
+        android:id="@+id/action"
+        android:textSize="30dp"
+        android:textColor="#f2f6f9"
+        android:layout_alignBottom="@+id/actionBar"
+        android:layout_alignRight="@+id/drama"
+        android:layout_alignEnd="@+id/drama"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="Drama"
+        android:id="@+id/drama"
+        android:textSize="30dp"
+        android:textColor="#f2f6f9"
+        android:layout_above="@+id/actionBar"
+        android:layout_alignRight="@+id/comedy"
+        android:layout_alignEnd="@+id/comedy"
+        android:layout_marginBottom="7dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
 
     <Button
         android:layout_width="wrap_content"
@@ -146,10 +146,9 @@
         android:text="Recommend"
         android:id="@+id/button"
         android:onClick="onRecommend"
+        android:layout_marginTop="10dp"
         android:layout_below="@+id/actionBar"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="27dp"
-        tools:background="@color/colorPrimaryDark" />
+        android:layout_centerHorizontal="true" />
 
 
 </RelativeLayout>
