@@ -54,7 +54,8 @@ public class MovieDisplayActivity extends Activity {
                 String name = json_data.getString("title");
                 String genre = json_data.getString("genre");
 
-                items.add(name + " -- " + rating);
+                items.add(name + " -- " + rating + " -- " + genre);
+                //TODO: ASHUTOSH please set genre in description text
                 Log.d(name, "Output");
             }catch (JSONException e)
             {
