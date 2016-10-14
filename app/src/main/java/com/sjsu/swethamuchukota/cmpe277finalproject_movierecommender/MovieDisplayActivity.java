@@ -17,7 +17,7 @@ import java.util.ArrayList;
 public class MovieDisplayActivity extends Activity {
     Context context;
     MovieAdapter adapter;
-    Movie movieModel;
+    //Movie movieModel;
     String[] moviesArray = new String[] { "Android", "iPhone", "WindowsMobile",
             "Blackberry", "WebOS", "Ubuntu", "Windows7", "Max OS X",
             "Linux", "OS/2", "Ubuntu", "Windows7", "Max OS X", "Linux",
@@ -55,7 +55,7 @@ public class MovieDisplayActivity extends Activity {
                 float rating = (float) json_data.getDouble("rating");
                 String name = json_data.getString("title");
                 String genre = json_data.getString("genre");
-                movieModel = new Movie(name,genre,rating);
+                Movie movieModel = new Movie(name,genre,rating);
              //   items.add(name + " -- " + rating + " -- " + genre);
                 items.add(movieModel);
                 Log.d(name, "Output");
@@ -67,7 +67,7 @@ public class MovieDisplayActivity extends Activity {
 
 
        // ArrayAdapter adapter = new ArrayAdapter<String>(this,R.layout.single_listitem_layout, R.id.firstLine, items);
-        adapter = new MovieAdapter(context, items);
+        adapter = new MovieAdapter(this.getApplicationContext(), items);
         ListView listView = (ListView) findViewById(R.id.movieListview);
         listView.setAdapter(adapter);
 

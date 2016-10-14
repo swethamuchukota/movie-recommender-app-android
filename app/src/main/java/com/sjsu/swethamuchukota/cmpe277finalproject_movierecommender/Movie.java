@@ -12,6 +12,9 @@ public class Movie {
     }
 
     public Movie(String name, String genre, float rating) {
+        this.movieName = name;
+        this.genre = genre;
+        this.rating = rating;
     }
 
 
@@ -23,6 +26,14 @@ public class Movie {
         this.movieName = movieName;
     }
 
+    public String getGenre() {
+        return genre;
+    }
+
+    public void setGenre(String genre) {
+        this.genre = genre;
+    }
+
     public float getRating() {
         return rating;
     }
@@ -30,12 +41,4 @@ public class Movie {
     public void setRating(float rating) {
         this.rating = rating;
     }
-
-    public String getGenre(){
-        return genre;
-    }
-    public void setGenre(String genre){
-        this.genre =genre;
-    }
-
 }

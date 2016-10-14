@@ -24,7 +24,8 @@
         android:layout_toRightOf="@id/icon"
         android:gravity="center_vertical"
         android:text="Example application"
-        android:textSize="16sp" />
+        android:textSize="16sp"
+        android:textColor="@color/colorPrimary"/>
 
     <TextView
         android:id="@+id/secondLine"
@@ -36,7 +37,8 @@
         android:textSize="12sp"
         android:layout_alignParentBottom="true"
         android:layout_toRightOf="@+id/icon"
-        android:layout_toEndOf="@+id/icon" />
+        android:layout_toEndOf="@+id/icon"
+        android:textColor="@color/colorPrimary"/>
 
     <RatingBar
         android:layout_height="wrap_content"
