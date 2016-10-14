@@ -24,7 +24,7 @@ import java.util.List;
  */
 
 public class CommonUtils {
-    public static final String HOST_PORT = "10.0.0.230:9090";
+    public static final String HOST_PORT = "192.168.1.150:9090";
         //10.151.100.249
     public static <T> List<T> convertJsonArrayToList(String jsonArrayStr, Class<T> clazz) throws java.io.IOException {
         /*ObjectMapper mapper = new ObjectMapper();
