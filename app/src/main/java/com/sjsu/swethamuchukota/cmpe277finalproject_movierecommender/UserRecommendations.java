@@ -13,6 +13,8 @@ public class UserRecommendations implements Serializable {
     private int rating;
     private String genre;
     private int movieId;
+    private int imdbid;
+
 
     public String getTitle() {
         return title;

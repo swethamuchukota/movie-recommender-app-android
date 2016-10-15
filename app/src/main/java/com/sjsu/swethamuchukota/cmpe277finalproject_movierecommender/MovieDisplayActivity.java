@@ -5,6 +5,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.app.Activity;
 import android.util.Log;
+import android.view.View;
 import android.widget.*;
 
 import org.json.JSONArray;
@@ -14,18 +15,6 @@ import org.json.JSONObject;
 import java.util.ArrayList;
 
 public class MovieDisplayActivity extends Activity {
-
-    String[] moviesArray = new String[] { "Android", "iPhone", "WindowsMobile",
-            "Blackberry", "WebOS", "Ubuntu", "Windows7", "Max OS X",
-            "Linux", "OS/2", "Ubuntu", "Windows7", "Max OS X", "Linux",
-            "OS/2", "Ubuntu", "Windows7", "Max OS X", "Linux", "OS/2",
-            "Android", "iPhone", "WindowsMobile" };
-
-    /*public MovieDisplayActivity(String[] movies)
-    {
-        moviesArray = movies;
-    }*/
-
     JSONArray array = null;
     JSONObject json_data;
     @Override
@@ -53,8 +42,9 @@ public class MovieDisplayActivity extends Activity {
                 int rating = json_data.getInt("rating");
                 String name = json_data.getString("title");
                 String genre = json_data.getString("genre");
+                int imdbid = json_data.getInt("imdbid");
 
-                items.add(name + " -- " + rating + " -- " + genre);
+                items.add(name + " -- " + rating + " -- " + genre + " :" + imdbid);
                 //TODO: ASHUTOSH please set genre in description text
                 Log.d(name, "Output");
             }catch (JSONException e)
@@ -68,6 +58,24 @@ public class MovieDisplayActivity extends Activity {
 
         ListView listView = (ListView) findViewById(R.id.movieListview);
         listView.setAdapter(adapter);
+        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                // TODO Auto-generated method stub
+                TextView listText = (TextView) view.findViewById(R.id.firstLine);
+                String text = listText.getText().toString();
+
+                // create intent to start another activity
+                Intent intent = new Intent(MovieDisplayActivity.this, MovieDetailsActivity.class);
+                // add the selected text item to our intent.
+                intent.putExtra("movieDetails", text);
+                startActivity(intent);
+
+            }
+        });
+
 
     }
+
 }
