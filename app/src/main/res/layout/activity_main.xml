@@ -79,17 +79,6 @@
         android:textColor="#f2f6f9"
         android:layout_marginTop="40dp" />
 
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Recommend"
-        android:id="@+id/button"
-        android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginBottom="25dp"
-        android:onClick="onRecommend"
-        />
-
     <SeekBar
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -100,7 +89,7 @@
         android:layout_alignRight="@+id/apptitle"
         android:layout_alignEnd="@+id/apptitle"
         android:layout_marginLeft="10dp"
-        android:max="10"
+        android:max="5"
         android:progressBackgroundTint="@color/whitetext"
         android:layout_marginTop="10dp"/>
 
@@ -114,7 +103,7 @@
         android:layout_alignEnd="@+id/apptitle"
         android:layout_marginLeft="10dp"
         android:layout_marginTop="65dp"
-        android:max="10"
+        android:max="5"
         android:progressBackgroundTint="@color/whitetext"
         android:layout_below="@id/comedyBar"
         />
@@ -130,7 +119,7 @@
         android:layout_alignEnd="@+id/apptitle"
         android:layout_marginLeft="10dp"
         android:layout_marginTop="65dp"
-        android:max="10"
+        android:max="5"
         android:progressBackgroundTint="@color/whitetext"
         android:layout_below="@id/horrorBar"
         />
@@ -145,12 +134,22 @@
         android:layout_alignRight="@+id/horror"
         android:layout_alignEnd="@+id/apptitle"
         android:layout_marginLeft="10dp"
-        android:max="10"
+        android:max="5"
         android:layout_marginTop="65dp"
         android:progressBackgroundTint="@color/whitetext"
         android:layout_below="@id/dramaBar"
         />
 
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Recommend"
+        android:id="@+id/button"
+        android:onClick="onRecommend"
+        android:layout_below="@+id/actionBar"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="27dp"
+        tools:background="@color/colorPrimaryDark" />
 
 
 </RelativeLayout>

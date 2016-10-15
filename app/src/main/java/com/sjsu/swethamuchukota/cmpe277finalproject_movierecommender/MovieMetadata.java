@@ -163,24 +163,19 @@ public class MovieMetadata implements Serializable {
 
     @Override
     public String toString() {
-        return "MovieMetadata{" +
-                "id=" + id +
-                ", title='" + title + '\'' +
-                ", director='" + director + '\'' +
-                ", writer='" + writer + '\'' +
-                ", cined='" + cined + '\'' +
-                ", prod='" + prod + '\'' +
-                ", type='" + type + '\'' +
-                ", year='" + year + '\'' +
-                ", countries='" + countries + '\'' +
-                ", dur='" + dur + '\'' +
-                ", mpaa='" + mpaa + '\'' +
-                ", rate='" + rate + '\'' +
-                ", cov='" + cov + '\'' +
-                ", gen='" + gen + '\'' +
-                ", plot='" + plot + '\'' +
-                ", plotout='" + plotout + '\'' +
-                ", cast='" + cast + '\'' +
-                '}';
+        return  "Title='" + title + '\'' + "\n\n" +
+                "Director='" + director + '\'' + "\n\n" +
+                "Writer='" + writer + '\'' + "\n\n" +
+                "Cined='" + cined + '\'' + "\n\n" +
+                "Prod='" + prod + '\'' + "\n\n" +
+                "Type='" + type + '\'' + "\n\n" +
+                "Year='" + year + '\'' + "\n\n" +
+                "Countries='" + countries + '\'' + "\n\n" +
+                "Duration ='" + dur + '\'' + "\n\n" +
+                "mpaa='" + mpaa + '\'' + "\n\n" +
+                "Rate='" + rate + '\'' + "\n\n" +
+                "Genre='" + gen + '\'' + "\n\n" +
+                "Plot='" + plotout + '\'' + "\n\n" +
+                "Cast='" + cast + '\'' + "\n";
     }
 }

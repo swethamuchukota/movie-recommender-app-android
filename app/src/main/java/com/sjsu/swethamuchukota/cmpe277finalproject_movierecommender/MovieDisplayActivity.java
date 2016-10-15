@@ -1,7 +1,7 @@
+
 package com.sjsu.swethamuchukota.cmpe277finalproject_movierecommender;
 
 import android.content.Intent;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.app.Activity;
 import android.util.Log;
@@ -79,3 +79,4 @@ public class MovieDisplayActivity extends Activity {
     }
 
 }
+

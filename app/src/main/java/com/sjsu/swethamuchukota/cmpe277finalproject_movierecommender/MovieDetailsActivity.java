@@ -21,10 +21,10 @@ public class MovieDetailsActivity extends AppCompatActivity {
         String selectedMovie = getIntent().getStringExtra("movieDetails");
         String imdbId = selectedMovie.substring(selectedMovie.lastIndexOf(':')+1, selectedMovie.length());
         String movieUri = MessageFormat.format(CommonUtils.MOVIES_API_FORAMT, imdbId);
-        new LongOperation().execute(movieUri);
+        new GetMovieDetailsTask().execute(movieUri);
     }
 
-    private class LongOperation extends AsyncTask<String, Void, MovieMetadata> {
+    private class GetMovieDetailsTask extends AsyncTask<String, Void, MovieMetadata> {
 
         @Override
         protected MovieMetadata doInBackground(String... params) {
@@ -36,8 +36,8 @@ public class MovieDetailsActivity extends AppCompatActivity {
         protected void onPostExecute(MovieMetadata result) {
             TextView txt = (TextView) findViewById(R.id.movieTitle);
             txt.setText(result.getTitle());
-            TextView details = (TextView) findViewById(R.id.movieTitle);
-            details.setText(result.getPlotout());
+            TextView details = (TextView) findViewById(R.id.movieDetailsTextView);
+            details.setText(result.toString());
             // might want to change "executed" for the returned string passed
             // into onPostExecute() but that is upto you
             ImageView img= (ImageView) findViewById(R.id.movieImageView);
